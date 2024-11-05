@@ -1,0 +1,31 @@
+SOLID Principles: These are the 5 design principles for creating more flexible, understandable, and maintainable software System.
+
+S: Single responsibility Principle (SRP)
+    - Definition: A class should have one and only one reason to change, meaning it should have only one job/responsibility.
+    - Explaination: If a class have multiple responsibilities, they become coupled and a change in one responsibility could affect others.
+    - Example: if a "Report" class is responsible for both generating the report and printing it, then using SRP, we can seperate these responsibilities into two classes: "ReportDataGeneratro" and "ReportPrinter"
+
+O: Open/Closed principle (OCP)
+    - Definition: Software entities (classes, modules, functions etc) should be  open for extention but closed for modification.
+    - Explaination: Means you should be able to add new functionality to the class without altering its existing code. This is often achieved through inheritance or Interfaces, which allow you to extend a class's behavior without modifying the original codebase.
+    - Example: If you have a "Notification" class that sends emails, you shouldn't modify the class to add SMS Notification, instead you shoudld extend the class or implement an interface to add the new functionality.
+
+L: Liskov Substitution Principle (LSP)
+    - Definition: Subtypes must be substitutable for their basetypes without altering the correctness of the program.
+    - Explaination: If class S is a subclass of class T, then objects of type T should be replaceable with object of type S without breaking the program. This principle ensures that subclasses behave consistently with the expectation of the parent class.
+    - Example: If you have a "Bird" class with a 'fly' method, it would violate the LSP to create a subclass "Penguin" that cannot fly, instead you create a "FlightBird" class for flying birds and a "FlightlessBird" class for birds that cannot fly.
+
+I: Interface Saggregation Principle (ISP)
+    - Definition: A clint should not be forced to implement interfaces it doesn't use.
+    - Explanation: This principle suggest that interface should be specific to the client that use them, rather than having one large general-purpose interface. This reduces the implementation of unused or irrelevant methods in classes and makes the codebase cleaner and more modular.
+    - Example: Imagine an "Employee" interface with methods like 'clockIn', 'doWork', and 'processPayroll'. Temporary employees might not need processPayroll, so it would be better to have seperate smaller interfaces such as 'workable' and 'payrollProcessable' for each responsibility.  
+
+
+D: Dependency Inversion Principle (DIP)
+    - Definition: High level modules should not depend on low-level modules; both should depend on abstractions. Also abstractino should not depend on detials; details should depend on abstraction.
+    - Explanation: This principle aims to reduce dependency on concrete classes and instead depend on abstractions (like interfaces or abstract classes). It helps decouple code, making it more flexible and easier to midify.
+    - Example: suppose you have a Database class that your USerService class depends on directly. Instead of tightly coupling UserService to Database, you could define an IDatabase interface.
+                The UserService would depend on this interface and Database would implement IDatabase. Now you can swap Database with any other implementation of IDatabase without changing UserService.
+
+
+                

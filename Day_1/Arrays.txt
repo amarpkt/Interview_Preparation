@@ -1,0 +1,11 @@
+int i = 5;
+int j = 6;
+int k = 7;
+
+
+if we want to store all the three into one variable then we can use Array:
+
+int num[] = {5,6,7} ; // All we need to do is add an array symbol to indicate that we are storing the values in array.
+
+- initializing dynamic array : 
+    int num[] = new int[5];  --Array of size 5
